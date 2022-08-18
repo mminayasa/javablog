@@ -62,9 +62,6 @@ public class AuthController {
         }
 
         // Create user object
-        System.out.println(signUpDto.getUsername());
-        System.out.println(signUpDto.getEmail());
-        System.out.println(signUpDto.getPassword());
         User user = new User();
         user.setUserName(signUpDto.getUsername());
         user.setEmail(signUpDto.getEmail());
@@ -73,8 +70,6 @@ public class AuthController {
 
         Role roles = roleRepository.findByName("ROLE_ADMIN").get();
         user.setRoles(Collections.singleton(roles));
-
-        System.out.println(user);
 
         userRepository.save(user);
         return new ResponseEntity<>("User register successfully", HttpStatus.CREATED);
