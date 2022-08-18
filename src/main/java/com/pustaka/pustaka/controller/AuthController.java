@@ -62,6 +62,9 @@ public class AuthController {
         }
 
         // Create user object
+        System.out.println(signUpDto.getUsername());
+        System.out.println(signUpDto.getEmail());
+        System.out.println(signUpDto.getPassword());
         User user = new User();
         user.setUserName(signUpDto.getUsername());
         user.setEmail(signUpDto.getEmail());
